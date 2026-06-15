@@ -1,0 +1,55 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Config with API keys (stored in Keychain, not here)
+config.json
+*.env
+.env
+
+# Piper models (large, downloaded on first run)
+assets/piper/
+
+# Memory DB
+memory.db
+*.db
+
+# FAISS index
+*.faiss
+*.index
+
+# macOS
+.DS_Store
+*.dmg
+
+# Planning
+.flow/
+
+# Claude Code local config (never push)
+.claude/
+.claude-plugin-config.json
+
+# Tool caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Logs
+*.log
+logs/
+
+# Dev render artifacts (generated previews)
+assets/*_preview.png
+
+# Secrets / local config (belt-and-suspenders)
+*.key
+*.pem
+keystore.properties
+local.properties
+settings.json
+settings.local.json
