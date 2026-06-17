@@ -1,8 +1,8 @@
 """Consent gate — apps/files must not be accessed without explicit permission."""
 
 import pytest
-from src.voiceofjarvis import config as cfg
-from src.voiceofjarvis.tools import consent, local_files, macos_calendar, macos_notes
+from src.voiceofiu import config as cfg
+from src.voiceofiu.tools import consent, local_files, macos_calendar, macos_notes
 
 
 @pytest.fixture(autouse=True)

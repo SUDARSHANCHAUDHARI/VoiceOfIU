@@ -5,7 +5,7 @@ string ever appears in source — keeps the repo secret-scanner clean.
 """
 
 import pytest
-from src.voiceofjarvis.tools.redact import contains_secret, redact
+from src.voiceofiu.tools.redact import contains_secret, redact
 
 _ALNUM = "abcdefghijklmnopqrstuvwxyz1234567890"
 

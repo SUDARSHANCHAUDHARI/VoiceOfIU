@@ -1,8 +1,8 @@
 """Configurable assistant name — wake word rebuilds, display/spoken forms."""
 
 import pytest
-from src.voiceofjarvis import config as cfg
-from src.voiceofjarvis.listening import wake_word
+from src.voiceofiu import config as cfg
+from src.voiceofiu.listening import wake_word
 
 
 @pytest.fixture(autouse=True)

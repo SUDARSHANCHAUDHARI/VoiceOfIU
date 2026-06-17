@@ -1,6 +1,6 @@
 """Sentence splitting for streaming TTS."""
 
-from src.voiceofjarvis.output.tts import _SENTENCE_END, _is_non_latin
+from src.voiceofiu.output.tts import _SENTENCE_END, _is_non_latin
 
 
 def test_sentence_split():

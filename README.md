@@ -135,7 +135,7 @@ mic → VAD → Whisper STT → wake word → planner → tool dispatch → LLM 
 .venv/bin/pip install -r requirements-dev.txt
 .venv/bin/python -m pytest          # 76 tests
 .venv/bin/ruff check src/ tests/    # lint
-.venv/bin/mypy src/voiceofjarvis/   # type check
+.venv/bin/mypy src/voiceofiu/   # type check
 ```
 
 ## Author

@@ -1,9 +1,9 @@
 """Router task-type detection, stop command, URL extraction, Ollama model selection."""
 
 import pytest
-from src.voiceofjarvis.router import ollama_client
-from src.voiceofjarvis.router.router import _detect_task_type, _is_coding_task
-from src.voiceofjarvis.tools.dispatcher import _extract_url, is_stop_command
+from src.voiceofiu.router import ollama_client
+from src.voiceofiu.router.router import _detect_task_type, _is_coding_task
+from src.voiceofiu.tools.dispatcher import _extract_url, is_stop_command
 
 
 @pytest.mark.parametrize("intent,expected", [

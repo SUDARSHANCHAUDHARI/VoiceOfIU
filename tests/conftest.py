@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 @pytest.fixture
 def temp_db(monkeypatch):
     """Point the store at a throwaway SQLite file and initialise it."""
-    from src.voiceofjarvis.memory import store
+    from src.voiceofiu.memory import store
     fd, path = tempfile.mkstemp(suffix=".db")
     os.close(fd)
     monkeypatch.setattr(store, "DB_PATH", path)
