@@ -9,7 +9,7 @@ description = "VoiceOfIU — a private, local macOS voice assistant powered by C
 requires-python = ">=3.11"
 
 [project.scripts]
-voiceofiu = "voiceofjarvis.main:run"
+voiceofiu = "voiceofiu.main:run"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -1,7 +1,7 @@
 """Wake word detection — the most failure-prone piece (Whisper mishears 'IU AI')."""
 
 import pytest
-from src.voiceofjarvis.listening.wake_word import detect
+from src.voiceofiu.listening.wake_word import detect
 
 
 @pytest.mark.parametrize("phrase", [

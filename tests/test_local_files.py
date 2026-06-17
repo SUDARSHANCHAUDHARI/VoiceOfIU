@@ -2,7 +2,7 @@
 
 import os
 
-from src.voiceofjarvis.tools import local_files
+from src.voiceofiu.tools import local_files
 
 
 def test_blocks_outside_allowed_roots():

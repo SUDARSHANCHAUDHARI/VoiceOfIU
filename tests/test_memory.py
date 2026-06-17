@@ -1,6 +1,6 @@
 """Memory store, redaction-on-save, topic graph, and summariser thresholds."""
 
-from src.voiceofjarvis.memory import graph, search
+from src.voiceofiu.memory import graph, search
 
 
 def test_save_and_recent(temp_db):

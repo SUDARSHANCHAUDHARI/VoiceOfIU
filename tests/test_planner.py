@@ -1,7 +1,7 @@
 """Task planner — multi-step request splitting."""
 
 import pytest
-from src.voiceofjarvis.router.planner import is_multi_step, plan
+from src.voiceofiu.router.planner import is_multi_step, plan
 
 
 def test_single_step_passthrough():
