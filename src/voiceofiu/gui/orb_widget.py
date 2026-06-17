@@ -1,5 +1,5 @@
 """
-Audio-reactive orb HUD — the JARVIS-style centerpiece.
+Audio-reactive orb HUD — the sci-fi HUD centerpiece.
 
 Frameless, translucent, always-on-top. A glowing reactor orb that breathes when
 idle, pulses with your voice, draws a real-time circular waveform during speech,
