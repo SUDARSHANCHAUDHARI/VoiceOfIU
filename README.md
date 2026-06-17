@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
 ![macOS](https://img.shields.io/badge/macOS-Apple%20Silicon-000000?logo=apple)
 ![No API keys](https://img.shields.io/badge/API%20keys-none-4ade80)
-![License](https://img.shields.io/badge/License-Proprietary-7c6cfc)
+![License](https://img.shields.io/badge/License-Apache%202.0-7c6cfc)
 
 A private, **local** voice assistant for macOS — wake word, speech-to-text, LLM reasoning, and text-to-speech, all running on your machine. No API keys, no per-request billing: it drives the **Claude Code CLI**, **Codex CLI**, and **Ollama** as subprocesses using your existing logins.
 
@@ -144,4 +144,6 @@ Built by **Sudarshan Chaudhari** — [SudarshanTechLabs](https://github.com/SUDA
 
 ## License
 
-Proprietary — © SudarshanTechLabs. All rights reserved. Not licensed for redistribution.
+Licensed under the **Apache License 2.0** — see [LICENSE](LICENSE). © 2026 Sudarshan Chaudhari (SudarshanTechLabs).
+
+Bundled and runtime third-party components (e.g. PySide6 — LGPL; Whisper, Piper, Ollama models) retain their own respective licenses.
