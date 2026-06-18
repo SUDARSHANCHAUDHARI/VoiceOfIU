@@ -153,6 +153,18 @@ def _redact(text: str) -> str:
         return text
 
 
+# Playful "little baby" voice — named after IU. When enabled, pitch up the output.
+_BABY_PITCH = 1.32  # higher = squeakier; ~1.3 reads as a cute child voice
+
+
+def _baby_voice() -> bool:
+    try:
+        from ..config import config
+        return bool(config.baby_voice)
+    except Exception:
+        return False
+
+
 def _play_piper(text: str):
     import numpy as np
     import sounddevice as sd
@@ -162,7 +174,9 @@ def _play_piper(text: str):
     chunks = [np.frombuffer(c, dtype=np.int16) for c in voice.synthesize_stream_raw(text)]  # type: ignore[attr-defined]  # piper ships no stubs
     if chunks:
         audio = np.concatenate(chunks).astype(np.float32) / 32768.0
-        sd.play(audio, samplerate=22050, blocking=True)
+        # Baby voice: play faster than synthesised → raises pitch (cute, squeaky).
+        rate = int(22050 * _BABY_PITCH) if _baby_voice() else 22050
+        sd.play(audio, samplerate=rate, blocking=True)
 
 
 def _is_non_latin(text: str) -> bool:
@@ -176,6 +190,10 @@ def _play_fallback(text: str):
         if _is_non_latin(text):
             # macOS auto-selects voice — handles Devanagari/Marathi better than Samantha
             subprocess.run(["say", text], check=False)
+        elif _baby_voice():
+            # Cute "little baby" voice — raise pitch + speak a touch faster via
+            # macOS embedded speech commands. Tunable: pbas (pitch), -r (rate).
+            subprocess.run(["say", "-v", "Samantha", "-r", "215", f"[[pbas 70]] {text}"], check=False)
         else:
             subprocess.run(["say", "-v", "Samantha", text], check=False)
     else:
