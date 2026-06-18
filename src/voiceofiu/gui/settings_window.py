@@ -142,6 +142,13 @@ class SettingsWindow(QDialog):
 
         form.addRow(QLabel("Note: larger = more accurate but slower. 'base' recommended for Apple Silicon."))
 
+        # Voice ─ playful baby voice option (IU is named after the author's daughter)
+        form.addRow(QLabel(""))
+        self._baby_voice = QCheckBox("Baby voice 👶 — speak in a cute, high-pitched little-baby voice")
+        self._baby_voice.setChecked(config.baby_voice)
+        form.addRow(self._baby_voice)
+        form.addRow(QLabel("Optional: turn this on any time you'd like IU to talk like a little baby."))
+
         return w
 
     # ── MCP ───────────────────────────────────────────────────────────────────
@@ -185,6 +192,7 @@ class SettingsWindow(QDialog):
         config.context_window = self._ctx_spin.value()
         config.ollama_model = self._ollama_model.text().strip()
         config.whisper_model = self._whisper_model.currentText()
+        config.baby_voice = self._baby_voice.isChecked()
 
         config.allow_calendar = self._allow_calendar.isChecked()
         config.allow_mail = self._allow_mail.isChecked()

@@ -11,11 +11,24 @@ A private, **local** voice assistant for macOS — wake word, speech-to-text, LL
 
 ---
 
+## 💜 Why “IU”?
+
+**VoiceOfIU is named after — and dedicated to — my newborn daughter, IU.**
+
+Her name became the assistant's name and its default wake word, so that saying *“IU”* out loud at home always carries a little of her with it. Building a warm, gentle voice that lives in our house felt like the right way to welcome her into the world. This project is for her. 💜
+
+> Tip: IU can also speak in a playful **baby voice** 👶 — toggle it any time in **Settings → Audio** for a cute, high-pitched little-baby voice.
+
+— Sudarshan Chaudhari
+
+---
+
 ## Features
 
 - **Wake word** — say the name anywhere in a sentence (configurable). Whisper-mishearing aliases built in.
 - **Audio-reactive orb HUD** — a floating, translucent reactor orb that pulses with your voice, draws a live waveform, shifts colour by state (listening → thinking → speaking), and shows a typewriter caption of the conversation. Three satellite nodes open Logs / Memory / Settings.
 - **Streaming responses** — starts speaking the first sentence while the LLM is still generating.
+- **Voices** — a natural voice by default (Piper, with a macOS system-voice fallback), plus an optional playful **baby voice** 👶 in **Settings → Audio**.
 - **Live transcription** — your words appear as you speak (toggleable).
 - **Smart LLM routing** — Claude Code CLI (default brain) → Codex CLI (code tasks) → Ollama (offline). Ollama auto-picks the best installed model per task type.
 - **Multi-step requests** — "check the weather and then remind me to call mom" is split into ordered sub-tasks.
@@ -82,6 +95,7 @@ In-app, Calendar / Mail / Notes / file access are **off by default** and enabled
 ## Configuration
 
 - Change the assistant **name**, models, offline mode, permissions, and MCP servers in **Settings** or the setup wizard.
+- **Baby voice** 👶 — enable a cute, high-pitched little-baby voice under **Settings → Audio** (off by default).
 - Persisted to `~/.config/VoiceOfIU/settings.json`.
 - Logs: `~/Library/Logs/VoiceOfIU/voiceofiu.log`.
 

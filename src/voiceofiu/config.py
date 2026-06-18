@@ -11,6 +11,7 @@ _SETTINGS_PATH = os.path.expanduser("~/.config/VoiceOfIU/settings.json")
 # Keys persisted to / loaded from settings.json
 _PERSISTED = (
     "wake_word", "whisper_model", "ollama_model", "offline_mode", "context_window",
+    "baby_voice",
     "allow_calendar", "allow_mail", "allow_notes", "allow_files",
 )
 
@@ -29,6 +30,7 @@ class Config:
     wake_word: str = "iu"               # user-chosen AI name; default "IU"
     context_window: int = 10            # turns to keep in rolling context
     live_transcription: bool = True     # show words as you speak (set False if it lags)
+    baby_voice: bool = False            # playful high-pitched "little baby" voice (named after IU 👶)
 
     # Access consent — OFF by default. Nothing on your Mac is opened/read until
     # you explicitly enable it in Settings. Prevents silent access to private data.
