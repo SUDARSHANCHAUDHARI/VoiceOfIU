@@ -30,13 +30,14 @@ def read_inbox(count: int = 5) -> str | None:
 
 def compose_draft(to: str, subject: str, body: str) -> str:
     """Create a draft email (does NOT send — opens for review). Privacy-safe."""
-    safe_subject = subject.replace('"', "'")
-    safe_body = body.replace('"', "'")
+    safe_subject = macos_bridge.escape(subject)
+    safe_body = macos_bridge.escape(body)
+    safe_to = macos_bridge.escape(to)
     script = f'''
     tell application "Mail"
         set newMsg to make new outgoing message with properties {{subject:"{safe_subject}", content:"{safe_body}", visible:true}}
         tell newMsg
-            make new to recipient at end of to recipients with properties {{address:"{to}"}}
+            make new to recipient at end of to recipients with properties {{address:"{safe_to}"}}
         end tell
         activate
     end tell

@@ -34,7 +34,7 @@ def list_events(days: int = 1) -> str | None:
 
 def create_event(title: str, hours_from_now: float = 1.0, duration_minutes: int = 60) -> str:
     """Create a calendar event starting `hours_from_now`."""
-    safe_title = title.replace('"', "'")
+    safe_title = macos_bridge.escape(title)
     script = f'''
     tell application "Calendar"
         set startDate to (current date) + ({hours_from_now} * hours)

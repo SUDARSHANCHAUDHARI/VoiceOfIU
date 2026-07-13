@@ -61,3 +61,12 @@ def run(app: str, script: str, timeout: int = 20) -> str | None:
         return result.stdout.strip()
     except (subprocess.TimeoutExpired, FileNotFoundError):
         return None
+
+
+def escape(s: str) -> str:
+    """Escape a string for safe interpolation into an AppleScript double-quoted literal.
+
+    Handles backslash first, then double quotes, so voice/LLM-derived text can't
+    break out of the string literal and inject AppleScript commands.
+    """
+    return s.replace("\\", "\\\\").replace('"', '\\"')

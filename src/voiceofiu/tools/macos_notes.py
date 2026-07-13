@@ -32,8 +32,8 @@ def list_notes(count: int = 5) -> str | None:
 
 def create_note(title: str, body: str = "") -> str:
     """Create a new note with title and optional body."""
-    safe_title = title.replace('"', "'")
-    safe_body = body.replace('"', "'")
+    safe_title = macos_bridge.escape(title)
+    safe_body = macos_bridge.escape(body)
     content = f"{safe_title}<br>{safe_body}" if safe_body else safe_title
     script = f'''
     tell application "Notes"
