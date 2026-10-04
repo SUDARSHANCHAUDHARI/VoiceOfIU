@@ -53,3 +53,5 @@ keystore.properties
 local.properties
 settings.json
 settings.local.json
+
+repoguard-results/
